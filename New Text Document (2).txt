@@ -1,0 +1,13 @@
+public static void takenScreenShots() {
+		TakesScreenshot tsv = ((TakesScreenshot) driver);
+		File src = tsv.getScreenshotAs(OutputType.FILE);
+		String destfile = System.getProperty("user.dir") + "\screenshots\\img" + ".png";
+		File destination = new File(destfile);
+		try {
+			FileUtils.copyFile(src, destination);
+		}
+		catch(IOException est)
+		{
+			est.printStackTrace();
+		}
+	}
